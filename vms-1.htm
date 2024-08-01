@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book a Vehicle</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #3c1754;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .form-container {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            max-width: 400px;
+            width: 100%;
+        }
+        .form-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .form-container select,
+        .form-container input[type="time"],
+        .form-container input[type="date"],
+        .form-container input[type="number"],
+        .form-container input[type="radio"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        .form-container input[type="submit"] {
+            width: 100%;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .form-container input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        .form-container .booking-details label {
+            font-weight: bold;
+        }
+        .form-container .booking-details input[type="radio"] {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <h2>Book a Vehicle</h2>
+            <form id="bookingForm" action="confirm_booking.php" method="POST">
+                <div class="booking-details">
+                    <label for="arrival_location">Arrival Location:</label>
+                    <select id="arrival_location" name="arrival_location" required>
+                        <option value="">Select Arrival Location</option>
+                        <option value="Chennai">Chennai</option>
+                        <option value="Madurai">Madurai</option>
+                        <option value="Coimbatore">Coimbatore</option>
+                        <option value="Hosur">Hosur</option>
+                        <option value="Trichy">Trichy</option>
+                        <option value="Tirunelveli">Tirunelveli</option>
+                        <option value="Salem">Salem</option>
+                        <option value="Thoothukudi">Thoothukudi</option>
+                        <option value="Thanjavur">Thanjavur</option>
+                    </select>
+                    <label for="pickup_location">Pickup Location:</label>
+                    <select id="pickup_location" name="pickup_location" required>
+                        <option value="">Select Pickup Location</option>
+                        <option value="Chennai">Chennai</option>
+                        <option value="Madurai">Madurai</option>
+                        <option value="Coimbatore">Coimbatore</option>
+                        <option value="Hosur">Hosur</option>
+                        <option value="Trichy">Trichy</option>
+                        <option value="Tirunelveli">Tirunelveli</option>
+                        <option value="Salem">Salem</option>
+                        <option value="Thoothukudi">Thoothukudi</option>
+                        <option value="Thanjavur">Thanjavur</option>
+                    </select>
+                    <label for="pickup_time">Pickup Time:</label>
+                    <input type="time" id="pickup_time" name="pickup_time" required>
+                    <label for="pickup_date">Pickup Date:</label>
+                    <input type="date" id="pickup_date" name="pickup_date" required>
+                    <label for="vehicle_type">Vehicle Type:</label>
+                    <select id="vehicle_type" name="vehicle_type" required>
+                        <option value="">Select Vehicle Type</option>
+                        <option value="Bike">Bike</option>
+                        <option value="Car">Car</option>
+                        <option value="Bus">Bus</option>
+                        <option value="Truck">Truck</option>
+                        <option value="Auto">Auto</option>
+                    </select>
+                    <label for="seater_capacity">Seater Capacity:</label>
+                    <input type="number" id="seater_capacity" name="seater_capacity" min="2" max="10" required>
+                    <label>AC/Non-AC:</label>
+                    <input type="radio" id="ac" name="ac_non_ac" value="AC" required><label for="ac">AC</label>
+                    <input type="radio" id="non_ac" name="ac_non_ac" value="Non-AC"><label for="non_ac">Non-AC</label>
+                </div>
+                <input type="submit" value="Confirm Booking">
+            </form>
+        </div>
+    </div>
+</body>
+</html>
